@@ -135,7 +135,12 @@
         <div class="row justify-content-center mt-4">
 
           <div class="col-lg-9">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="https://api.web3forms.com/submit" method="POST" role="form" class="php-email-form">
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="700e6f79-a106-40e8-80ab-6c2d914fd214">
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
