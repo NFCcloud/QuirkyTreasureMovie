@@ -64,11 +64,25 @@
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+      
+      // Handle JSON responses (e.g., Web3Forms)
+      try {
+        const jsonData = JSON.parse(data);
+        if (jsonData.success === true || jsonData.success === 'true') {
+          thisForm.querySelector('.sent-message').classList.add('d-block');
+          thisForm.reset();
+          return;
+        } else {
+          throw new Error(jsonData.message || 'Form submission failed');
+        }
+      } catch (e) {
+        // If not JSON, handle as plain text (traditional PHP response)
+        if (data.trim() == 'OK') {
+          thisForm.querySelector('.sent-message').classList.add('d-block');
+          thisForm.reset(); 
+        } else {
+          throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        }
       }
     })
     .catch((error) => {

@@ -1,43 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
-  <title>Ο θησαυρός του Quirky</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Δείτε την Ταινία - Ο θησαυρός του Quirky</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+  
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
-
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: rgb(0, 255, 157);
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      padding-top: 80px;
+      overflow-x: hidden;
     }
 
-    .container {
+    .movie-container {
+      padding: 60px 0;
+      min-height: calc(100vh - 80px);
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: center;
     }
 
-    video {
-      max-width: 40%;
-      max-height: 40%;
-      
-    }
-    h1 {
+    .movie-title {
       font-family: 'Nosifer', cursive;
-      font-size: 48px;
-      color: black;
+      font-size: 3.5rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.5),
+                   0 0 40px rgba(255, 215, 0, 0.3);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5),
+                     0 0 40px rgba(255, 215, 0, 0.3);
+      }
+      to {
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+                     0 0 60px rgba(255, 215, 0, 0.5);
+      }
+    }
+
+    .movie-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+      font-style: italic;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 40px;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      color: #000;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+      color: #000;
+    }
+
+    .back-button i {
+      font-size: 1.3rem;
+    }
+
+    .decorative-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .movie-title {
+        font-size: 2rem;
+      }
+      
+      .movie-subtitle {
+        font-size: 1rem;
+      }
+      
+      .video-wrapper {
+        padding: 20px;
+      }
+      
+      .back-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      body {
+        padding-top: 60px;
+      }
+      
+      .movie-container {
+        padding: 30px 0;
+      }
+      
+      .movie-title {
+        font-size: 1.5rem;
+      }
+      
+      .video-wrapper {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Ο θησαυρός του Quirky</h1>
-   
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/OqKA6UkUlKs" frameborder="0" allowfullscreen></iframe>
-     
+  
+  <!-- Decorative Background Elements -->
+  <div class="decorative-elements">
+    <div class="star" style="width: 2px; height: 2px; top: 20%; left: 10%; animation-delay: 0s;"></div>
+    <div class="star" style="width: 3px; height: 3px; top: 40%; left: 80%; animation-delay: 1s;"></div>
+    <div class="star" style="width: 2px; height: 2px; top: 60%; left: 20%; animation-delay: 2s;"></div>
+    <div class="star" style="width: 3px; height: 3px; top: 80%; left: 70%; animation-delay: 0.5s;"></div>
+    <div class="star" style="width: 2px; height: 2px; top: 30%; left: 50%; animation-delay: 1.5s;"></div>
+    <div class="star" style="width: 3px; height: 3px; top: 70%; left: 40%; animation-delay: 2.5s;"></div>
+    <div class="star" style="width: 2px; height: 2px; top: 15%; left: 90%; animation-delay: 3s;"></div>
+    <div class="star" style="width: 3px; height: 3px; top: 50%; left: 15%; animation-delay: 0.8s;"></div>
   </div>
+
+  <!-- Content -->
+  <div class="content-wrapper">
+    <div class="container movie-container">
+      <div data-aos="fade-down" data-aos-duration="1000">
+        <h1 class="movie-title">Ο θησαυρός του Quirky</h1>
+        <p class="movie-subtitle">Μια περιπέτεια πέντε φίλων που δεν θα ξεχάσετε</p>
+      </div>
+
+      <div class="video-wrapper" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/OqKA6UkUlKs?rel=0&modestbranding=1" 
+            title="Ο θησαυρός του Quirky" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+        <a href="index.html" class="back-button">
+          <i class="bi bi-arrow-left-circle"></i>
+          <span>Επιστροφή στην Αρχική</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+
+  <script>
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+      duration: 1000,
+      once: true,
+      mirror: false
+    });
+
+    // Add more stars dynamically
+    const decorativeElements = document.querySelector('.decorative-elements');
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.width = Math.random() * 3 + 'px';
+      star.style.height = star.style.width;
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 3 + 's';
+      decorativeElements.appendChild(star);
+    }
+  </script>
+
 </body>
 </html>

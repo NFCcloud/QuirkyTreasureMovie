@@ -1,46 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
-  <title>Υπόθεση</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Υπόθεση - Ο θησαυρός του Quirky</title>
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+
   <style>
-    body {
-  background-color: #f1f1f1;
-  margin: 0;
-  padding: 20px;
-}
+    .presentation-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
 
-.presentation-box {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
+    .presentation-box h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 30px;
+      color: var(--color-primary);
+      text-align: center;
+      font-weight: 700;
+    }
 
-h1 {
-  font-size: 24px;
-  margin-top: 0;
-}
+    .presentation-box p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: justify;
+    }
 
-p {
-  font-size: x-large;
-  margin-bottom: 10px;
-}
+    @media (max-width: 768px) {
+      .presentation-box {
+        padding: 25px 20px;
+        margin: 20px;
+      }
+    }
 
+    @media (max-width: 576px) {
+      .presentation-box {
+        padding: 20px 15px;
+        margin: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="presentation-box">
-    <h1>Υπόθεση</h1>
-    <p>Το σενάριο μας παρουσιάζει μια ιστορία 5 φίλων που πάνε σε ένα κυνήγι θησαυρού.</p>
-       <p> Τα αγόρια πέφτουν πάνω σε έναν παλιό χάρτη που οδηγεί σε έναν θρυλικό κρυμμένο θησαυρό και έτσι οι 5 φίλοι αποφασίζουν να ξεκινήσουν ένα κυνήγι θησαυρού γεμάτο περιπέτεια και γέλιο.</p>
-       <p> Η ομαδα θα έρθει αντιμέτωπη με γρίφους, παγιδες και άλλες δυσκολίες που εμφανίζονται κατα τη διάρκεια του ταξιδιού και αντιμετωπιζουν άλλους κυνηγους θησαυρων.</p>
-        
-       <p> Η ομαδα θα βρεθεί  αντιμέτωπη με δυσκολίες και αναποδιές που εμφανίζονται κατα τη διάρκεια του ταξιδιού τους.</p>
-        
-       <p> Ο σκοπός της ταινίας είναι να διασκεδάσει τον θεατη και παραλληλα να αναδείξει όμορφα σημεία του νησιού.</p>
-        </p>
-  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <h1>Ο θησαυρός του Quirky</h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="#" class="active"><span>About</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="ipothesi.html" class="active">Υπόθεση</a></li>
+              <li><a href="xaraktires.html">Χαρακτήρες</a></li>
+              <li><a href="skines.html">Σκηνές</a></li>
+              <li><a href="topothesies.html">Τοποθεσίες</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header>
+
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>Η Υπόθεση</h2>
+            <p>Η ιστορία πίσω από την περιπέτεια</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container my-5 py-5">
+      <div class="presentation-box" data-aos="fade-up">
+        <h1>Η Ιστορία</h1>
+        <p>Το σενάριο μας παρουσιάζει μια ιστορία 5 φίλων που πάνε σε ένα κυνήγι θησαυρού.</p>
+        <p>Τα αγόρια πέφτουν πάνω σε έναν παλιό χάρτη που οδηγεί σε έναν θρυλικό κρυμμένο θησαυρό και έτσι οι 5 φίλοι αποφασίζουν να ξεκινήσουν ένα κυνήγι θησαυρού γεμάτο περιπέτεια και γέλιο.</p>
+        <p>Η ομάδα θα έρθει αντιμέτωπη με γρίφους, παγίδες και άλλες δυσκολίες που εμφανίζονται κατά τη διάρκεια του ταξιδιού και αντιμετωπίζουν άλλους κυνηγούς θησαυρών.</p>
+        <p>Η ομάδα θα βρεθεί αντιμέτωπη με δυσκολίες και αναποδιές που εμφανίζονται κατά τη διάρκεια του ταξιδιού τους.</p>
+        <p>Ο σκοπός της ταινίας είναι να διασκεδάσει τον θεατή και παράλληλα να αναδείξει όμορφα σημεία του νησιού.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TheAnimators</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="main.js"></script>
+
 </body>
 </html>
