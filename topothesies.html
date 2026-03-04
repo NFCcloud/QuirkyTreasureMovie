@@ -16,6 +16,12 @@
       padding-top: 90px;
     }
 
+    /* Ensure content is visible even if AOS hasn't loaded */
+    [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
     .casting-section {
       max-width: 1200px;
       margin: 0 auto;
@@ -124,7 +130,7 @@
     </div>
   </header>
 
-  <main id="main" data-aos="fade" data-aos-delay="300">
+  <main id="main">
     <div class="page-header d-flex align-items-center">
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
