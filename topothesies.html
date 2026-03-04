@@ -12,6 +12,10 @@
   <link href="main.css" rel="stylesheet">
 
   <style>
+    body {
+      padding-top: 90px;
+    }
+
     .casting-section {
       max-width: 1200px;
       margin: 0 auto;
@@ -33,9 +37,9 @@
     }
 
     .casting-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 15px;
       padding: 20px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -120,7 +124,7 @@
     </div>
   </header>
 
-  <main id="main" data-aos="fade" data-aos-delay="1500">
+  <main id="main" data-aos="fade" data-aos-delay="300">
     <div class="page-header d-flex align-items-center">
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
@@ -133,7 +137,7 @@
     </div>
 
     <section class="container my-5 py-5">
-      <div class="casting-section">
+      <div class="casting-section" data-aos="fade-up" data-aos-duration="800">
         <h1>Τοποθεσίες</h1>
 
         <div class="casting-container">
@@ -177,6 +181,10 @@
   </footer>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

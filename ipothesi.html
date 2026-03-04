@@ -12,10 +12,14 @@
   <link href="main.css" rel="stylesheet">
 
   <style>
+    body {
+      padding-top: 90px;
+    }
+
     .presentation-box {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 15px;
       padding: 40px;
       max-width: 900px;
@@ -81,7 +85,7 @@
     </div>
   </header>
 
-  <main id="main" data-aos="fade" data-aos-delay="1500">
+  <main id="main" data-aos="fade" data-aos-delay="300">
     <div class="page-header d-flex align-items-center">
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
@@ -94,7 +98,7 @@
     </div>
 
     <section class="container my-5 py-5">
-      <div class="presentation-box" data-aos="fade-up">
+      <div class="presentation-box" data-aos="fade-up" data-aos-duration="800">
         <h1>Η Ιστορία</h1>
         <p>Το σενάριο μας παρουσιάζει μια ιστορία 5 φίλων που πάνε σε ένα κυνήγι θησαυρού.</p>
         <p>Τα αγόρια πέφτουν πάνω σε έναν παλιό χάρτη που οδηγεί σε έναν θρυλικό κρυμμένο θησαυρό και έτσι οι 5 φίλοι αποφασίζουν να ξεκινήσουν ένα κυνήγι θησαυρού γεμάτο περιπέτεια και γέλιο.</p>
@@ -115,6 +119,10 @@
   </footer>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
